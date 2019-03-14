@@ -1,24 +1,17 @@
 package top.towing.demo.controller;
 
-import java.util.List;
+import java.security.Principal;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import top.towing.demo.model.User;
-import top.towing.demo.service.UserService;
-
 @RestController
-@RequestMapping("/users")
+@PreAuthorize("hasRole('USER')")
 public class UserController {
 	
-	@Autowired
-	private UserService userService;
-	
-	@RequestMapping(value="/user", method = RequestMethod.GET)
-    public List<User> listUser(){
-        return userService.findAll();
-    }
+	@RequestMapping("/")
+	public Principal resource(Principal principal) {
+		return principal;
+	}
 }
