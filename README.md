@@ -1,6 +1,7 @@
 # spring-security-demo
 Spring Security Demo
 
+## Request for user token
 Go to request for an access token, by curl command
 ```console
 curl http://localhost:8080/oauth/token
@@ -9,7 +10,7 @@ curl http://localhost:8080/oauth/token
     -u myclient:secret
 ```
 
-Then go response like below
+Get response like below
 ```json
 {
     "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTI2NjQ4ODcsInVzZXJfbmFtZSI6Inl0b25nODIiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwianRpIjoiZGNiZDY4MDYtNTYzOC00Mjc1LThhMjktZjM2YTM2YTQ0OGQzIiwiY2xpZW50X2lkIjoibXljbGllbnQiLCJzY29wZSI6WyJyZWFkIl19.G3fFlUVn_TRSykZlKCjZpdWLBnZclrNn6IxhZlUAb3E",
@@ -18,5 +19,25 @@ Then go response like below
     "expires_in": 86399,
     "scope": "read",
     "jti": "dcbd6806-5638-4275-8a29-f36a36a448d3"
+}
+```
+
+## Request for app token
+Go to request for an access token, by curl command
+```console
+curl http://localhost:8080/oauth/token
+    -d "grant_type=client_credentials"
+    -H "Content-type:application/x-www-form-urlencoded; charset=utf-8" 
+    -u myclient:secret
+```
+Get response like below
+```json
+{
+{
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6WyJyZWFkIl0sImV4cCI6MTU1Mjc1MjUyOCwianRpIjoiMzRlNTA0MTQtMzI4Mi00NzJiLTk1MmYtMTk3YWU2OGE4MWY3IiwiY2xpZW50X2lkIjoibXljbGllbnQifQ.GY75YxHrLj4GUckyrSuItAjzzbnex56veElLA-vDhyo",
+    "token_type": "bearer",
+    "expires_in": 86399,
+    "scope": "read",
+    "jti": "34e50414-3282-472b-952f-197ae68a81f7"
 }
 ```
