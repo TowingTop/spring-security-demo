@@ -33,7 +33,6 @@ curl http://localhost:8080/oauth/token
 Get response like below
 ```json
 {
-{
     "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6WyJyZWFkIl0sImV4cCI6MTU1Mjc1MjUyOCwianRpIjoiMzRlNTA0MTQtMzI4Mi00NzJiLTk1MmYtMTk3YWU2OGE4MWY3IiwiY2xpZW50X2lkIjoibXljbGllbnQifQ.GY75YxHrLj4GUckyrSuItAjzzbnex56veElLA-vDhyo",
     "token_type": "bearer",
     "expires_in": 86399,
