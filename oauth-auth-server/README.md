@@ -1,5 +1,5 @@
-# spring-security-demo
-Spring Security Demo
+# oauth-auth-server
+OAuth2 Authorization Server Demo
 
 ## Request for user token
 Go to request for an access token, by curl command
